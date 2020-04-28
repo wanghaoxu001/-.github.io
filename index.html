@@ -498,6 +498,158 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xuxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xuxu叨逼叨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url">机器视觉学习记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-15T16:27:51+08:00">
+                2020-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="机器视觉学习记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Halcon-机器视觉学习记录"><a href="#Halcon-机器视觉学习记录" class="headerlink" title="Halcon 机器视觉学习记录"></a>Halcon 机器视觉学习记录</h1><p>一个零件图片的组成元素无非是一些灰度(RGB)值不同的几何形状。想要检测零件是否正常，就要找到合适的方法来识别出这些几何图形集合（其实就是BLOB分析），然后用一些条件来找到符合缺陷特征的部分。<br>大致可以分为以下几种</p>
+<ul>
+<li>基于select_shape_xld()的几何特征选择</li>
+<li>基于其他算法的几何特征选择</li>
+<li>基于模式匹配的特征识别<h2 id="几何特征识别"><a href="#几何特征识别" class="headerlink" title="几何特征识别"></a>几何特征识别</h2><h3 id="去掉背景"><a href="#去掉背景" class="headerlink" title="去掉背景"></a>去掉背景</h3>机器视觉任务最基本的要求就是要找到关注的区域，需要对哪里进行操作的问题。一张采集样本图中，由于及其工作环境等问题，有相当一部分属于不需要关注的背景。如果带着背景运行程序，效率就会降低。对图片进行灰度阈值二值化，通过选择面积等参数可以方便的去除背景，然后提取实体外围轮廓。<br>Halcon二值化函数threshold()及其他threshold类函数。<br>另外检测实体如果具有明确的形状，还可以用shape_trans()函数调整成平滑的形状，方便后续处，理时边缘不规则形状影响处理结果。<h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3>检查零件上有没有裂纹时，首先要找到裂纹与其他部分如零件内部其他结构边缘的特征区别在哪里，初步形成一套语言可以明确描述的规则来判断零件是否存在裂纹。<br>寻找特征的套路是：</li>
+</ul>
+<ol>
+<li>threshold()类函数二值化得到边缘region</li>
+<li>gen_contour_region_xld()转亚像素级XLD数据结构</li>
+<li>shape_trans_xld()边缘几何拟合</li>
+<li>Halcon提供了针对XLD强大的几何特征筛选函数select_shape_xld()，具有各种参数方便筛选符合特征的形状<h2 id="模板匹配特征识别"><a href="#模板匹配特征识别" class="headerlink" title="模板匹配特征识别"></a>模板匹配特征识别</h2>Halcon毕竟是面向工业生产的框架，其中的模版匹配算法很成熟。除了经典简单的模板匹配步骤，还增加了训练差异模型这个高科技，可以用多张图片训练模型对差异识别的准确度，是典型的从不合格产品中分辨出合格产品的应用模型（根据灰度图比较）。<br>在我的项目中，零件电镀电极的粗细及倾角并不严格一致所以需要更灵活的匹配算法。因为差异模型可以自行从几张良品图中学习，比较符合我的需求。Halcon的模板匹配相关算子种类繁多，单一个create_shape_model() 就有多达11个参数。我目前也只是根据例子按部就班地写出了零件电极变形识别的初步代码框架之后简单地调整了参数，查全率还可以但查准率很低，所以没有被工厂技术人员通过需要进一步调试   ᶘ ᵒᴥᵒᶅ<br>简单地说，如果图片中与需要提取的特征类似的元素过多，或无法轻松用几何特征筛选，可以用模版匹配的方式。下面介绍模板匹配的一般方法：</li>
+<li>通过BLOB分析处理图像创建ROI，或读取ROI拿到模板图像。</li>
+<li>在建立模板之前需要先对这个区域进行一些处理，方便以后的建模，比如阈值分割、形状处理等。</li>
+<li>调用相关创建模板算子并设定合适的参数创建模板匹配原型。</li>
+<li>使用匹配原型进行相应变换，在需要匹配的图像上找和模板一样的位置。</li>
+<li>计算出相似的分数。<br>为了让模板有更强的鲁棒性，Halcon引入了差异模型。<br>下图是我为工厂技术人员提交的流程图。<br>[image:5E46A54D-9A77-4B85-94D1-FB1297448284-22009-0001F628E4AC23E6/电极变形.jpg]<br>下面对零件检测的关键步骤进行简单的介绍：</li>
+<li>create_variation_model() 创建差异模型，分为两部分：一部分是一张良品图像，一部分是良品图的差异信息。</li>
+<li>当无法保证同位置同角度的时候，可以使用find_shape_model匹配来使图片转换到正确位置以对齐（利用affine_trans_image）。</li>
+<li>train_variation_model() 用良品图像训练差异模型。</li>
+<li>进行检测的前期准备，prepare_variation_model() 设置差异模型的绝对阈值和相对阈值。绝对阈值即待检测图像与标准图像的差值，相对阈值即待检测图像与差异模型与参数VarThreshold乘绩的差值。</li>
+<li>compare_variation_model( )待检测图像与variation model进行比较，超过阈值的区域在参数Region中返回。同threshold一样，返回的区域被看做一个区域，可以使用connection算子进行连通性分析，然后根据区域的特征（如面积）对区域进行选择。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -544,7 +696,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
