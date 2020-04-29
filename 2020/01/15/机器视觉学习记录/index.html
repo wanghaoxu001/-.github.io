@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Halcon 机器视觉学习记录一个零件图片的组成元素无非是一些灰度(RGB)值不同的几何形状。想要检测零件是否正常，就要找到合适的方法来识别出这些几何图形集合（其实就是BLOB分析），然后用一些条件来找到符合缺陷特征的部分。大致可以分为以下几种  基于select_shape_xld()的几何特征选择 基于其他算法的几何特征选择 基于模式匹配的特征识别    几何特征识别去掉背景机器视觉任务最基本">
+<meta name="description" content="Halcon 机器视觉学习记录为了多学点东西增加实际项目经验，在去年和今年考研结束之后我分别花了一个月的时间，去了广州工业大学的纺织纤维分析计算机实验室参与了一些机器视觉方面的项目。今年主要是为一个肇庆的零件生产企业提供一系列零件良品检测程序。公司提供了大量样本供我测试，在查准率查全率指标合格后将程序代码和说明文件交给公司的技术人员。还为他们提供后续必要的维护工作。   一个零件图片的组成元素无非">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器视觉学习记录">
 <meta property="og:url" content="http://yoursite.com/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="xuxu叨逼叨">
-<meta property="og:description" content="Halcon 机器视觉学习记录一个零件图片的组成元素无非是一些灰度(RGB)值不同的几何形状。想要检测零件是否正常，就要找到合适的方法来识别出这些几何图形集合（其实就是BLOB分析），然后用一些条件来找到符合缺陷特征的部分。大致可以分为以下几种  基于select_shape_xld()的几何特征选择 基于其他算法的几何特征选择 基于模式匹配的特征识别    几何特征识别去掉背景机器视觉任务最基本">
+<meta property="og:description" content="Halcon 机器视觉学习记录为了多学点东西增加实际项目经验，在去年和今年考研结束之后我分别花了一个月的时间，去了广州工业大学的纺织纤维分析计算机实验室参与了一些机器视觉方面的项目。今年主要是为一个肇庆的零件生产企业提供一系列零件良品检测程序。公司提供了大量样本供我测试，在查准率查全率指标合格后将程序代码和说明文件交给公司的技术人员。还为他们提供后续必要的维护工作。   一个零件图片的组成元素无非">
 <meta property="og:locale" content="zh_HK">
 <meta property="og:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/%E7%94%B5%E6%9E%81%E5%8F%98%E5%BD%A2.jpg">
 <meta property="article:published_time" content="2020-01-15T08:27:51.000Z">
-<meta property="article:modified_time" content="2020-04-29T08:22:13.886Z">
+<meta property="article:modified_time" content="2020-04-29T09:03:34.412Z">
 <meta property="article:author" content="xuxu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/%E7%94%B5%E6%9E%81%E5%8F%98%E5%BD%A2.jpg">
@@ -322,11 +322,12 @@
       
 
       
-        <h1 id="Halcon-机器视觉学习记录"><a href="#Halcon-机器视觉学习记录" class="headerlink" title="Halcon 机器视觉学习记录"></a>Halcon 机器视觉学习记录</h1><p>一个零件图片的组成元素无非是一些灰度(RGB)值不同的几何形状。想要检测零件是否正常，就要找到合适的方法来识别出这些几何图形集合（其实就是BLOB分析），然后用一些条件来找到符合缺陷特征的部分。<br>大致可以分为以下几种</p>
+        <h1 id="Halcon-机器视觉学习记录"><a href="#Halcon-机器视觉学习记录" class="headerlink" title="Halcon 机器视觉学习记录"></a>Halcon 机器视觉学习记录</h1><p>为了多学点东西增加实际项目经验，在去年和今年考研结束之后我分别花了一个月的时间，去了广州工业大学的纺织纤维分析计算机实验室参与了一些机器视觉方面的项目。今年主要是为一个肇庆的零件生产企业提供一系列零件良品检测程序。公司提供了大量样本供我测试，在查准率查全率指标合格后将程序代码和说明文件交给公司的技术人员。还为他们提供后续必要的维护工作。  </p>
+<p>一个零件图片的组成元素无非是一些灰度(RGB)值不同的几何形状。想要检测零件是否正常，就要找到合适的方法来识别出这些几何图形集合（其实就是BLOB分析），然后用一些条件来找到符合缺陷特征的部分。<br>大致可以分为以下几种</p>
 <ul>
-<li>基于select_shape_xld()的几何特征选择</li>
-<li>基于其他算法的几何特征选择</li>
+<li>基于Halcon的几何特征选择</li>
 <li>基于模式匹配的特征识别  </li>
+<li>其他几何特征选择算法</li>
 </ul>
 <h2 id="几何特征识别"><a href="#几何特征识别" class="headerlink" title="几何特征识别"></a>几何特征识别</h2><h3 id="去掉背景"><a href="#去掉背景" class="headerlink" title="去掉背景"></a>去掉背景</h3><p>机器视觉任务最基本的要求就是要找到关注的区域，需要对哪里进行操作的问题。一张采集样本图中，由于及其工作环境等问题，有相当一部分属于不需要关注的背景。如果带着背景运行程序，效率就会降低。对图片进行灰度阈值二值化，通过选择面积等参数可以方便的去除背景，然后提取实体外围轮廓。Halcon二值化函数threshold()及其他threshold类函数。  </p>
 <p>另外检测实体如果具有明确的形状，还可以用shape_trans()函数调整成平滑的形状，方便后续处，理时边缘不规则形状影响处理结果。  </p>
@@ -355,8 +356,9 @@
 <li>当无法保证同位置同角度的时候，可以使用find_shape_model匹配来使图片转换到正确位置以对齐（利用affine_trans_image）。</li>
 <li>train_variation_model() 用良品图像训练差异模型。</li>
 <li>进行检测的前期准备，prepare_variation_model() 设置差异模型的绝对阈值和相对阈值。绝对阈值即待检测图像与标准图像的差值，相对阈值即待检测图像与差异模型与参数VarThreshold乘绩的差值。</li>
-<li>compare_variation_model( )待检测图像与variation model进行比较，超过阈值的区域在参数Region中返回。同threshold一样，返回的区域被看做一个区域，可以使用connection算子进行连通性分析，然后根据区域的特征（如面积）对区域进行选择。</li>
+<li>compare_variation_model( )待检测图像与variation model进行比较，超过阈值的区域在参数Region中返回。同threshold一样，返回的区域被看做一个区域，可以使用connection算子进行连通性分析，然后根据区域的特征（如面积）对区域进行选择。  </li>
 </ol>
+<h2 id="其他几何特征选择算法"><a href="#其他几何特征选择算法" class="headerlink" title="其他几何特征选择算法"></a>其他几何特征选择算法</h2><p>起初公司提出的要求是用免费的OpenCV开发（Halcon是收费软件），所以第一个零件边缘缺角检测程序就是用的c语言，虽然还是基本完成了，但自己水平有限程序运行速度比较慢且开发时间很长。  </p>
 
       
     </div>
@@ -492,7 +494,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Halcon-机器视觉学习记录"><span class="nav-number">1.</span> <span class="nav-text">Halcon 机器视觉学习记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#几何特征识别"><span class="nav-number">1.1.</span> <span class="nav-text">几何特征识别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#去掉背景"><span class="nav-number">1.1.1.</span> <span class="nav-text">去掉背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征提取"><span class="nav-number">1.1.2.</span> <span class="nav-text">特征提取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板匹配特征识别"><span class="nav-number">1.2.</span> <span class="nav-text">模板匹配特征识别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Halcon-机器视觉学习记录"><span class="nav-number">1.</span> <span class="nav-text">Halcon 机器视觉学习记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#几何特征识别"><span class="nav-number">1.1.</span> <span class="nav-text">几何特征识别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#去掉背景"><span class="nav-number">1.1.1.</span> <span class="nav-text">去掉背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征提取"><span class="nav-number">1.1.2.</span> <span class="nav-text">特征提取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板匹配特征识别"><span class="nav-number">1.2.</span> <span class="nav-text">模板匹配特征识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他几何特征选择算法"><span class="nav-number">1.3.</span> <span class="nav-text">其他几何特征选择算法</span></a></li></ol></li></ol></div>
             
 
           </div>
