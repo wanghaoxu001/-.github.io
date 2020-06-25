@@ -79,13 +79,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="xuxu叨逼叨">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="配置NAT网络和Host-Only网络前期工作添加 VirtualBox NAT网络VirtualBox 偏好设置 –&gt; 网络 –&gt; 添加新NAT网络 添加 VirtualBox Host-Only网络VirtualBox 管理 –&gt; 主机网络管理器 –&gt; 创建 注意我们是要在Host-Only网络下自定ip，所以这里不要勾选DHCP服务器，其他保持默认。记住这里的IPv4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VirtualBox ubuntu-18.04.04 安装配置记录">
+<meta property="og:url" content="http://yoursite.com/2020/06/25/VirtualBox%E4%B8%8A%E5%AE%89%E8%A3%85ubuntu-18-04-04%E5%B9%B6%E9%85%8D%E7%BD%AENAT%E7%BD%91%E7%BB%9C%E5%92%8CHost-Only%E7%BD%91%E7%BB%9C%E5%8F%8C%E7%BD%91%E5%8D%A1/index.html">
 <meta property="og:site_name" content="xuxu叨逼叨">
+<meta property="og:description" content="配置NAT网络和Host-Only网络前期工作添加 VirtualBox NAT网络VirtualBox 偏好设置 –&gt; 网络 –&gt; 添加新NAT网络 添加 VirtualBox Host-Only网络VirtualBox 管理 –&gt; 主机网络管理器 –&gt; 创建 注意我们是要在Host-Only网络下自定ip，所以这里不要勾选DHCP服务器，其他保持默认。记住这里的IPv4">
 <meta property="og:locale" content="zh_HK">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625214856.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625215653.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625234326.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200626020136.png">
+<meta property="article:published_time" content="2020-06-25T13:36:09.000Z">
+<meta property="article:modified_time" content="2020-06-25T18:21:42.173Z">
 <meta property="article:author" content="xuxu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625214856.png">
 
 
 
@@ -115,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/25/VirtualBox上安装ubuntu-18-04-04并配置NAT网络和Host-Only网络双网卡/"/>
 
 
 
 
 
-  <title>xuxu叨逼叨</title>
+  <title>VirtualBox ubuntu-18.04.04 安装配置记录 | xuxu叨逼叨</title>
   
 
 
@@ -140,8 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,9 +232,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -256,9 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/25/VirtualBox%E4%B8%8A%E5%AE%89%E8%A3%85ubuntu-18-04-04%E5%B9%B6%E9%85%8D%E7%BD%AENAT%E7%BD%91%E7%BB%9C%E5%92%8CHost-Only%E7%BD%91%E7%BB%9C%E5%8F%8C%E7%BD%91%E5%8D%A1/" itemprop="url">VirtualBox ubuntu-18.04.04 安装配置记录</a></h1>
+          <h1 class="post-title" itemprop="name headline">VirtualBox ubuntu-18.04.04 安装配置记录</h1>
         
 
         <div class="post-meta">
@@ -319,9 +325,7 @@
       
 
       
-        
-          
-            <h1 id="配置NAT网络和Host-Only网络"><a href="#配置NAT网络和Host-Only网络" class="headerlink" title="配置NAT网络和Host-Only网络"></a>配置NAT网络和Host-Only网络</h1><h2 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h2><h3 id="添加-VirtualBox-NAT网络"><a href="#添加-VirtualBox-NAT网络" class="headerlink" title="添加 VirtualBox NAT网络"></a>添加 VirtualBox NAT网络</h3><p>VirtualBox 偏好设置 –&gt; 网络 –&gt; 添加新NAT网络<br><img src="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625214856.png" alt="NAT设置页面"></p>
+        <h1 id="配置NAT网络和Host-Only网络"><a href="#配置NAT网络和Host-Only网络" class="headerlink" title="配置NAT网络和Host-Only网络"></a>配置NAT网络和Host-Only网络</h1><h2 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h2><h3 id="添加-VirtualBox-NAT网络"><a href="#添加-VirtualBox-NAT网络" class="headerlink" title="添加 VirtualBox NAT网络"></a>添加 VirtualBox NAT网络</h3><p>VirtualBox 偏好设置 –&gt; 网络 –&gt; 添加新NAT网络<br><img src="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625214856.png" alt="NAT设置页面"></p>
 <h3 id="添加-VirtualBox-Host-Only网络"><a href="#添加-VirtualBox-Host-Only网络" class="headerlink" title="添加 VirtualBox Host-Only网络"></a>添加 VirtualBox Host-Only网络</h3><p>VirtualBox 管理 –&gt; 主机网络管理器 –&gt; 创建</p>
 <p>注意我们是要在Host-Only网络下自定ip，所以这里<strong>不要勾选</strong>DHCP服务器，其他保持默认。记住这里的<strong>IPv4网络地址</strong>，接下来在Linux系统内配置网络时自定ip要在这个网络号下（之前我就踩了坑，网卡设置和Linux系统网络配置网段不同导致虚拟机和主机无法成功ping通）。</p>
 <p><img src="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/20200625215653.png" alt="主机网络设置页面"></p>
@@ -345,8 +349,6 @@
 <p>另外MacOS里的VirtualBox不用每次打开应用界面启动虚拟机，可以用命令列出可启动的虚拟机</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> VBoxManage list vms</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="string">"ubuntu-18.04.4-server"</span> &#123;f757180b-d4e4-4f99-a184-fc61237b2091&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> VBoxManage startvm f757180b-d4e4-4f99-a184-fc61237b2091 --<span class="built_in">type</span> headless</span></span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -363,180 +365,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xuxu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xuxu叨逼叨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url">机器视觉学习记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-01-15T16:27:51+08:00">
-                2020-01-15
-              </time>
+              <a href="/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="next" title="机器视觉学习记录">
+                <i class="fa fa-chevron-left"></i> 机器视觉学习记录
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2020/01/15/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="机器视觉学习记录">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">閱讀次數&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="Halcon-机器视觉学习记录"><a href="#Halcon-机器视觉学习记录" class="headerlink" title="Halcon 机器视觉学习记录"></a>Halcon 机器视觉学习记录</h1><p>为了多学点东西增加实际项目经验，在去年和今年考研结束之后我分别花了一个月的时间，去了广州工业大学的纺织纤维分析计算机实验室参与了一些机器视觉方面的项目。今年主要是为一个肇庆的零件生产企业提供一系列零件良品检测程序。公司提供了大量样本供我测试，在查准率查全率指标合格后将程序代码和说明文件交给公司的技术人员。还为他们提供后续必要的维护工作。  </p>
-<p>一个零件图片的组成元素无非是一些灰度(RGB)值不同的几何形状。想要检测零件是否正常，就要找到合适的方法来识别出这些几何图形集合（其实就是BLOB分析），然后用一些条件来找到符合缺陷特征的部分。<br>大致可以分为以下几种</p>
-<ul>
-<li>基于Halcon的几何特征选择</li>
-<li>基于模式匹配的特征识别  </li>
-<li>其他几何特征选择算法</li>
-</ul>
-<h2 id="几何特征识别"><a href="#几何特征识别" class="headerlink" title="几何特征识别"></a>几何特征识别</h2><h3 id="去掉背景"><a href="#去掉背景" class="headerlink" title="去掉背景"></a>去掉背景</h3><p>机器视觉任务最基本的要求就是要找到关注的区域，需要对哪里进行操作的问题。一张采集样本图中，由于及其工作环境等问题，有相当一部分属于不需要关注的背景。如果带着背景运行程序，效率就会降低。对图片进行灰度阈值二值化，通过选择面积等参数可以方便的去除背景，然后提取实体外围轮廓。Halcon二值化函数threshold()及其他threshold类函数。  </p>
-<p>另外检测实体如果具有明确的形状，还可以用shape_trans()函数调整成平滑的形状，方便后续处，理时边缘不规则形状影响处理结果。  </p>
-<h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>检查零件上有没有裂纹时，首先要找到裂纹与其他部分如零件内部其他结构边缘的特征区别在哪里，初步形成一套语言可以明确描述的规则来判断零件是否存在裂纹。  </p>
-<p>寻找特征的套路是：</p>
-<ol>
-<li>threshold()类函数二值化得到边缘region</li>
-<li>gen_contour_region_xld()转亚像素级XLD数据结构</li>
-<li>shape_trans_xld()边缘几何拟合</li>
-<li>Halcon提供了针对XLD强大的几何特征筛选函数select_shape_xld()，具有各种参数方便筛选符合特征的形状  </li>
-</ol>
-<h2 id="模板匹配特征识别"><a href="#模板匹配特征识别" class="headerlink" title="模板匹配特征识别"></a>模板匹配特征识别</h2><p>Halcon毕竟是面向工业生产的框架，其中的模版匹配算法很成熟。除了经典简单的模板匹配步骤，还增加了训练差异模型这个高科技，可以用多张图片训练模型对差异识别的准确度，是典型的从不合格产品中分辨出合格产品的应用模型（根据灰度图比较）。  </p>
-<p>在我的项目中，零件电镀电极的粗细及倾角并不严格一致所以需要更灵活的匹配算法。因为差异模型可以自行从几张良品图中学习，比较符合我的需求。Halcon的模板匹配相关算子种类繁多，单一个create_shape_model() 就有多达11个参数。我目前也只是根据例子按部就班地写出了零件电极变形识别的初步代码框架之后简单地调整了参数，查全率还可以但查准率很低，所以没有被工厂技术人员通过需要进一步调试   ᶘ ᵒᴥᵒᶅ  </p>
-<p>简单地说，如果图片中与需要提取的特征类似的元素过多，或无法轻松用几何特征筛选，可以用模版匹配的方式。下面介绍模板匹配的一般方法：</p>
-<ol>
-<li>通过BLOB分析处理图像创建ROI，或读取ROI拿到模板图像。</li>
-<li>在建立模板之前需要先对这个区域进行一些处理，方便以后的建模，比如阈值分割、形状处理等。</li>
-<li>调用相关创建模板算子并设定合适的参数创建模板匹配原型。</li>
-<li>使用匹配原型进行相应变换，在需要匹配的图像上找和模板一样的位置。</li>
-<li>计算出相似的分数。  </li>
-</ol>
-<p>为了让模板有更强的鲁棒性，Halcon引入了差异模型。<br>下图是我为工厂技术人员提交的流程图。<br><img src="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/%E7%94%B5%E6%9E%81%E5%8F%98%E5%BD%A2.jpg" alt="">  </p>
-<p>下面对零件检测的关键步骤进行简单的介绍：</p>
-<ol>
-<li>create_variation_model() 创建差异模型，分为两部分：一部分是一张良品图像，一部分是良品图的差异信息。</li>
-<li>当无法保证同位置同角度的时候，可以使用find_shape_model匹配来使图片转换到正确位置以对齐（利用affine_trans_image）。</li>
-<li>train_variation_model() 用良品图像训练差异模型。</li>
-<li>进行检测的前期准备，prepare_variation_model() 设置差异模型的绝对阈值和相对阈值。绝对阈值即待检测图像与标准图像的差值，相对阈值即待检测图像与差异模型与参数VarThreshold乘绩的差值。</li>
-<li>compare_variation_model( )待检测图像与variation model进行比较，超过阈值的区域在参数Region中返回。同threshold一样，返回的区域被看做一个区域，可以使用connection算子进行连通性分析，然后根据区域的特征（如面积）对区域进行选择。  </li>
-</ol>
-<h2 id="其他几何特征选择算法"><a href="#其他几何特征选择算法" class="headerlink" title="其他几何特征选择算法"></a>其他几何特征选择算法</h2><p>起初公司提出的要求是用免费的OpenCV开发（Halcon是收费软件），所以第一个零件边缘缺角检测程序就是用的c语言，虽然还是基本完成了，但自己水平有限程序运行速度比较慢且开发时间很长。<br>程序流程如图所示<br><img src="https://raw.githubusercontent.com/wanghaoxu001/cloudimg/master/img/bianyuanquejiao.png" alt=""></p>
-<p>  前期处理都没什么好说的了，主要是二值化参数和图像预处理（高斯模糊等）的参数调试，找到边缘点之后按逆时针存到数组里。<br>  关键就是如何找到边缘的缺角，这里我是依次以给定步长求出边缘斜率。这是会出现一个问题就是由于边缘并不平滑，在步进过程中斜率可能会积累而大于360度（其实是该角度-360度才是真实的斜率），这时就要进行弥补使斜率变化呈现出一个渐进变化的形态（不一定非要在360这个数值以内，只要不严重突变即可）。这样我们就可以对斜率数组进行小波变化，得到角度突变异常的一部分点集（即缺角）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -546,10 +396,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -557,6 +408,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80OTkwNi8yNjM5Nw=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -577,8 +437,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -620,6 +489,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置NAT网络和Host-Only网络"><span class="nav-number">1.</span> <span class="nav-text">配置NAT网络和Host-Only网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期工作"><span class="nav-number">1.1.</span> <span class="nav-text">前期工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-VirtualBox-NAT网络"><span class="nav-number">1.1.1.</span> <span class="nav-text">添加 VirtualBox NAT网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-VirtualBox-Host-Only网络"><span class="nav-number">1.1.2.</span> <span class="nav-text">添加 VirtualBox Host-Only网络</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux修改系统网络配置"><span class="nav-number">1.2.</span> <span class="nav-text">linux修改系统网络配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -773,6 +658,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -801,6 +690,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
